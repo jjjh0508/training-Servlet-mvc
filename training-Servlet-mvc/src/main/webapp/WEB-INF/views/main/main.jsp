@@ -52,7 +52,7 @@
         <input type="number" name="menuPrice">
         <label>카테고리</label>
         <input type="text" name="category">
-        <button type="submit">메뉴삭제</button>
+        <button type="submit">메뉴추가</button>
 
     </form>
 </body>

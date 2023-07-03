@@ -25,6 +25,9 @@
         break;
       case '메뉴삭제 완료':
         movePath = '${pageContext.servletContext.contextPath}/menu/select';
+        break;
+      case '메뉴추가 완료':
+        movePath = '${pageContext.servletContext.contextPath}/menu/select';
     }
     alert(successCode);
     location.href=movePath;

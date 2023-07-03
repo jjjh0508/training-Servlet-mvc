@@ -2,6 +2,7 @@ package com.jihwan.mara.model.dao;
 
 import com.jihwan.mara.common.config.ConfigLocation;
 import com.jihwan.mara.model.dto.MenuAllDTO;
+import com.jihwan.mara.model.dto.MenuInsertDTO;
 import com.jihwan.mara.model.dto.MenuOneDTO;
 import com.jihwan.mara.model.dto.UpdateMenuDTO;
 
@@ -123,6 +124,25 @@ public class MenuDAO {
             close(pstmt);
         }
 
+        return result;
+    }
+
+    public int insertMenu(Connection con, MenuInsertDTO menuInsertDTO) {
+        PreparedStatement pstmt = null;
+        String query = prop.getProperty("insertMenu");
+        int result=0;
+
+        try {
+            pstmt = con.prepareStatement(query);
+            pstmt.setString(1,menuInsertDTO.getMenuName());
+            pstmt.setInt(2,Integer.parseInt(menuInsertDTO.getMenuPrice()));
+            pstmt.setInt(3,Integer.parseInt(menuInsertDTO.getCategory()));
+            result= pstmt.executeUpdate();
+        } catch (SQLException e) {
+           e.printStackTrace();
+        }finally {
+            close(pstmt);
+        }
         return result;
     }
 }

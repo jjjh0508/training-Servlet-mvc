@@ -2,6 +2,7 @@ package com.jihwan.mara.model.service;
 
 import com.jihwan.mara.model.dao.MenuDAO;
 import com.jihwan.mara.model.dto.MenuAllDTO;
+import com.jihwan.mara.model.dto.MenuInsertDTO;
 import com.jihwan.mara.model.dto.MenuOneDTO;
 import com.jihwan.mara.model.dto.UpdateMenuDTO;
 
@@ -58,6 +59,18 @@ public class MenuService {
 
         }
         close(con);
+        return result;
+    }
+
+    public int insertMenu(MenuInsertDTO menuInsertDTO) {
+        Connection con = getConnection();
+        int result = menuDAO.insertMenu(con,menuInsertDTO);
+
+        if (result > 0) {
+            commit(con);
+        }else {
+            rollback(con);
+        }
         return result;
     }
 }
