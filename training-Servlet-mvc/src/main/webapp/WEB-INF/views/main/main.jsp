@@ -13,7 +13,7 @@
 <body>
 <jsp:include page="../common/header.jsp"/>
 
-<%--    <img src="image.png" alt="먹는 장첸" width="206" height="182"/>--%>
+    <img src="/resources/image/image.png" alt="먹는 장첸" width="206" height="182"/>
 
 <nav>
     <li>
