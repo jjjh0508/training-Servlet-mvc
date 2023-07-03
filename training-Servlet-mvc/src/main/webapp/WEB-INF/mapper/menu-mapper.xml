@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <entry key="selectMenuAll">
+    SELECT
+           MENU_NAME,
+           MENU_PRICE
+        FROM TBL_MENU
+        WHERE ORDERABLE_STATUS='Y'
+    </entry>
+
+    <entry key="selectOneMenu">
+        SELECT T.MENU_NAME,
+        T.MENU_PRICE ,
+        T.CATEGORY_CODE,
+        T.ORDERABLE_STATUS,
+        C.CATEGORY_NAME
+        FROM TBL_MENU T
+        JOIN TBL_CATEGORY C ON (C.CATEGORY_CODE=T.CATEGORY_CODE)
+        WHERE T.MENU_CODE = ?
+    </entry>
+    
+    <entry key="updateMenu">
+        UPDATE TBL_MENU
+        SET
+        MENU_PRICE = ?,
+        ORDERABLE_STATUS =?
+        WHERE MENU_CODE = ?
+    </entry>
+
+    <entry key="deleteMenu">
+        UPDATE TBL_MENU
+        SET
+        ORDERABLE_STATUS ='N'
+        WHERE MENU_CODE = ?
+    </entry>
+
+    <entry key="insertMenu">
+
+
+    </entry>
+</properties>
