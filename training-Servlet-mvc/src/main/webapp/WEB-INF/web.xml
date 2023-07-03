@@ -4,6 +4,48 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <servlet>
+        <servlet-name>menuSelectOne</servlet-name>
+        <jsp-file>/WEB-INF/views/main/menuSelectOne.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>menuSelectOne</servlet-name>
+        <url-pattern>/menuSelectOne</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>menuUpdate</servlet-name>
+        <jsp-file>/WEB-INF/views/main/menuUpdate.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>menuUpdate</servlet-name>
+        <url-pattern>/menuUpdate</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>menuDelete</servlet-name>
+        <jsp-file>/WEB-INF/views/main/menuDelete.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>menuDelete</servlet-name>
+        <url-pattern>/menuDelete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>menuInsert</servlet-name>
+        <jsp-file>/WEB-INF/views/main/menuInsert.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>menuInsert</servlet-name>
+        <url-pattern>/menuInsert</url-pattern>
+    </servlet-mapping>
+
+
+
     <context-param>
         <param-name>connection-info</param-name>
         <param-value>/WEB-INF/config/connection-info.properties</param-value>

@@ -13,47 +13,23 @@
 <body>
 <jsp:include page="../common/header.jsp"/>
 
+<%--    <img src="image.png" alt="먹는 장첸" width="206" height="182"/>--%>
+
 <nav>
     <li>
-        <button onclick="location.href='${pageContext.servletContext.contextPath}/menu/select'">직원 전체 조회하기</button>
+        <a href="/menu/select">메뉴 전체 조회</a>
     </li>
     <li>
-        <form action="menu/selectone" method="get">
-            <input type="text" name="menuCode" id="menuCode">
-            <button type="submit">단일 메뉴 조회(메뉴코드)</button>
-        </form>
+        <a href="/menuSelectOne">단일 메뉴 조회</a>
     </li>
     <li>
-        <form action="menu/updete" method="get">
-            <label>메뉴코드</label>
-            <input type="text" name="menuCode">
-            <select name="status">
-                <option value="Y">판매중</option>
-                <option value="N">판매중지</option>
-            </select>
-            <label>메뉴가격</label>
-            <input type="text" name="price">
-
-            <button type="submit">판매여부 혹은 가격 수정</button>
-        </form>
+        <a href="/menuUpdate">판매여부 혹은 가격 수정</a>
     </li>
-
-    <label>메뉴삭제</label>
-    <form action="menu/delete" method="get">
-        <input type="text" name="menuCode">
-            <button type="submit">메뉴삭제</button>
-    </form>
-</nav>
-    <label>메뉴추가</label>
-    <form action="menu/insert" method="get">
-        <label>메뉴이름</label>
-        <input type="text" name="menuName">
-        <label>메뉴가격</label>
-        <input type="number" name="menuPrice">
-        <label>카테고리</label>
-        <input type="text" name="category">
-        <button type="submit">메뉴추가</button>
-
-    </form>
+    <li>
+        <a href="/menuDelete">판매중지</a>
+    </li>
+    <li>
+        <a href="/menuInsert">메뉴 추가</a>
+    </li>
 </body>
 </html>
